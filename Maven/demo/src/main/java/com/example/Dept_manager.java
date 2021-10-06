@@ -7,21 +7,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="dept_manager")
 public class Dept_manager {
     
-    @Id
-    @Column(name="dept_no")
+    @JoinColumn(name="dept_no")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int dept_no;
+    private departments dept_no;
 
     @Id
-    @Column(name="emp_no")
+    @JoinColumn(name="emp_no")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int emp_no;
+    private Employees emp_no;
 
     @Column(name="from_date")
     private Date from_date;
@@ -30,19 +30,19 @@ public class Dept_manager {
     private Date to_date;
 
 
-    public int getDept_no() {
+    public departments getDept_no() {
         return this.dept_no;
     }
 
-    public void setDept_no(int dept_no) {
+    public void setDept_no(departments dept_no) {
         this.dept_no = dept_no;
     }
 
-    public int getEmp_no() {
+    public Employees getEmp_no() {
         return this.emp_no;
     }
 
-    public void setEmp_no(int emp_no) {
+    public void setEmp_no(Employees emp_no) {
         this.emp_no = emp_no;
     }
 

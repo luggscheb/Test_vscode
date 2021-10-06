@@ -1,6 +1,7 @@
 package com.example;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,11 +19,11 @@ public class Employees {
 
     @OneToMany
     @JoinColumn(name="salaries", nullable=false)
-    private Salaries salaries;
+    private List<Salaries> salaries;
     
     @OneToMany
     @JoinColumn(name="titles", nullable=false)
-    private Titles titles;
+    private List<Titles> titles;
     
     @Id
     @Column(name="emp_no")

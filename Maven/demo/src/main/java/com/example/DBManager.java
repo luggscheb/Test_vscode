@@ -22,7 +22,7 @@ public class DBManager {
 	public Employees getEmployee(long emp_no) {
 		EntityManager em = emf.createEntityManager();
 		// JPQL - Java Persistence Query Language - nicht SQL
-		String sql = "SELECT s FROM employees s WHERE s.emp_no = :emp_no";
+		String sql = "SELECT s FROM Employees s WHERE s.emp_no = :emp_no";
 		Query query = em.createQuery(sql, Employees.class);
 		query.setParameter("emp_no", emp_no);
 		Employees emp = null;
@@ -55,7 +55,7 @@ public class DBManager {
 	public List<Employees> getEmployees() {
 		EntityManager em = emf.createEntityManager();
 		// JPQL - Java Persistence Query Language - nicht SQL
-		String sql = "SELECT s FROM employees s";
+		String sql = "SELECT s FROM Employees s";
 		Query query = em.createQuery(sql, Employees.class);
 		query.setMaxResults(5); //Funktioniert wie das limit in SQL
 		@SuppressWarnings("unchecked")

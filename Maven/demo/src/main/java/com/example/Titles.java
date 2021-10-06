@@ -7,41 +7,39 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="titles")
 public class Titles {
     
-    @ManyToOne
-    @Column(name="emp_no", nullable=false)
-    private Employees employees;	
+    // @ManyToOne
+    // @Column(name="emp_no", nullable=false)
+    // private Employees employees;	
 
     @Id
-    @Column(name="emp_no", nullable=false)
+    @JoinColumn(name="emp_no", nullable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int emp_no;
+    private Employees emp_no;
     
-    @Id
-    @Column(name="title")
+    @JoinColumn(name="title")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String title;
     
-    @Id
     @Column(name="from_date")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Date from_date;
 
     @Column(name="to_date")
     private Date to_date;
 
 
-    public int getEmp_no() {
+    public Employees getEmp_no() {
         return this.emp_no;
     }
 
-    public void setEmp_no(int emp_no) {
+    public void setEmp_no(Employees emp_no) {
         this.emp_no = emp_no;
     }
 

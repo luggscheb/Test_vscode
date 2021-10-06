@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,14 +15,14 @@ import javax.persistence.Table;
 @Table(name="salaries")
 public class Salaries {
     
-    @ManyToOne
-    @Column(name="emp_no", nullable = false, insertable=false, updatable=false)
-    private Employees employees;
+    // @ManyToOne
+    // @Column(name="emp_no", nullable = false, insertable=false, updatable=false)
+    // private Employees employees;
 
-    @Id
-    @Column(name="emp_no", nullable=false)
+    @ManyToOne
+    @JoinColumn(name="emp_no", nullable=false, insertable=false, updatable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int emp_no;
+    private Employees emp_no;
     
     @Column(name="salary")
     private int salary;
@@ -35,11 +36,11 @@ public class Salaries {
     private Date to_date;
 
 
-    public int getEmp_no() {
+    public Employees getEmp_no() {
         return this.emp_no;
     }
 
-    public void setEmp_no(int emp_no) {
+    public void setEmp_no(Employees emp_no) {
         this.emp_no = emp_no;
     }
 
@@ -71,7 +72,7 @@ public class Salaries {
     @Override
     public String toString() {
         return "{" +
-            " emp_no='" + getEmp_no() + "'" +
+            // " emp_no='" + getEmp_no() + "'" +
             ", salary='" + getSalary() + "'" +
             ", from_date='" + getFrom_date() + "'" +
             ", to_date='" + getTo_date() + "'" +

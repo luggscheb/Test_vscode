@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,11 +17,11 @@ public class departments {
 
     @OneToMany
     @JoinColumn(name = "dept_emp", nullable=false, insertable=false, updatable=false)
-    private Dept_emp dept_emp;
+    private List<Dept_emp> dept_emp;
 
     @OneToMany
     @JoinColumn(name = "dept_manager", nullable=false)
-    private Dept_manager dept_manager;
+    private List<Dept_manager> dept_manager;
 
     @Id
     @OneToMany
@@ -31,21 +33,21 @@ public class departments {
     private String dept_name;
 
 
-    public Dept_emp getDept_emp() {
-        return this.dept_emp;
-    }
+    // public Dept_emp getDept_emp() {
+    //     return this.dept_emp;
+    // }
 
-    public void setDept_emp(Dept_emp dept_emp) {
-        this.dept_emp = dept_emp;
-    }
+    // public void setDept_emp(Dept_emp dept_emp) {
+    //     this.dept_emp = dept_emp;
+    // }
 
-    public Dept_manager getDept_manager() {
-        return this.dept_manager;
-    }
+    // public Dept_manager getDept_manager() {
+    //     return this.dept_manager;
+    // }
 
-    public void setDept_manager(Dept_manager dept_manager) {
-        this.dept_manager = dept_manager;
-    }
+    // public void setDept_manager(Dept_manager dept_manager) {
+    //     this.dept_manager = dept_manager;
+    // }
 
     public int getDept_no() {
         return this.dept_no;
@@ -67,8 +69,8 @@ public class departments {
     @Override
     public String toString() {
         return "{" +
-            " dept_emp='" + getDept_emp() + "'" +
-            ", dept_manager='" + getDept_manager() + "'" +
+            // " dept_emp='" + getDept_emp() + "'" +
+            // ", dept_manager='" + getDept_manager() + "'" +
             ", dept_no='" + getDept_no() + "'" +
             ", dept_name='" + getDept_name() + "'" +
             "}";

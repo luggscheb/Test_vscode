@@ -16,18 +16,11 @@ public class Runner {
 		}
 
 		System.out.println();
-		System.out.println("Employee mit der emp_no: 200");
-		Employees s = db.getEmployee(200);
+		System.out.println("Employee mit der emp_no: 10001");
+		Employees s = db.getEmployee(10001);
 		System.out.println(s);
 
-		System.out.println();
-		System.out.println("Löschen von 200");
-		db.loescheEmp(200);
 		
-		System.out.println();
-		System.out.println("Employee mit der emp_no: 200");
-		Employees s1 = db.getEmployee(200);
-		System.out.println(s1);
 		
 		db.close();
 		System.out.println("Fertig!");
