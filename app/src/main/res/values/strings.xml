@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Taschenrechner</string>
+    <string name="num_1">Nummer 1</string>
+    <string name="num_2">Nummer 2</string>
+    <string-array name="operators">
+        <item>+</item>
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+        <item>^</item>
+    </string-array>
+</resources>
